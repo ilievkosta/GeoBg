@@ -1,0 +1,6 @@
+ <div class="owl-carousel owl-theme">
+      <?php $images = \File::allFiles(public_path('public/image/'))?>
+        @foreach($images as $image)
+         <div class="item"><img src="{{ asset('public/image/' . $image->getFilename()) }}" /></div>
+        @endforeach 
+       </div>
