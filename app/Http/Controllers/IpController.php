@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ip;
-
+use Illuminate\Support\Facades\Validator;
 
 class IpController extends Controller
 {
-   
+
     public function show_ip(Request $data){
+
+        $validatedData = $data->validate([
+       
+            'days' => 'required|numeric'
+        ]);
+      
         $days = $data->input('days');
       
  
@@ -21,6 +27,12 @@ class IpController extends Controller
 
 }
 public function show_ip_hours(Request $last_hours){
+    
+    $validatedData = $last_hours->validate([
+       
+        'hours' => 'required|numeric'
+    ]);
+  
     $hours=$last_hours->input('hours');
     $date = \Carbon\Carbon::now()->subHours($hours);
 
