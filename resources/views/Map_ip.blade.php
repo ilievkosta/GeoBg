@@ -136,7 +136,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([<?php if (($last->lat>41.08)&($last->lat<44.34)){echo $last->lat;}
     
  ?>,<?php if (($last->lon>22.18)&($last->lon<29.69)){echo $last->lon;} ?>]).addTo(map)
-  .bindPopup('<?php echo $last->created_at."<br>".$last->ip ?>')
+  .bindPopup('<?php echo $last->created_at."<br>".$last->ip."</br>".$last->isp ?>')
   .openPopup();
   
     </script>
